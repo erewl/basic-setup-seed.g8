@@ -1,9 +1,9 @@
 import sbt._
 
 object Dependencies {
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1" % Test
-  lazy val scalaCheck = "org.scalacheck" %% "scalacheck" % "1.14.3" % Test
-  lazy val mUnit = "org.scalameta" %% "munit" % "0.7.9" % Test
+  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1"
+  lazy val scalaCheck = "org.scalacheck" %% "scalacheck" % "1.14.3"
+  lazy val mUnit = "org.scalameta" %% "munit" % "0.7.9"
 
   lazy val http4s = "org.http4s" %% "http4s-dsl" % "0.21.3"
   lazy val http4sServer = "org.http4s" %% "http4s-blaze-server" % "0.21.3"
@@ -50,15 +50,16 @@ object Dependencies {
     "com.github.julien-truffaut" %% "monocle-law" % monocleVersion % "test"
   )
   lazy val newtype = "io.estatico" %% "newtype" % "0.4.4"
+
   lazy val WebDependencies = Seq(http4s, http4sServer) ++ tapir ++ circe
 
   lazy val DatabaseDependencies = doobie
 
   lazy val BasicDependencies =
-    Seq(catsCore, catsEffect, enumeratum, pureConfig, monocle, newtype, fs2)
+    Seq(catsCore, catsEffect, enumeratum, pureConfig, newtype, fs2) ++ monocle
 
-  lazy val LoggingDependencies = Seq(sl4fj, odin)
+  lazy val LoggingDependencies = Seq(sl4fj) ++ odin
 
-  lazy val TestDependencies = Seq(scalaTest, scalaCheck, mUnit)
+  lazy val TestDependencies = Seq(scalaTest, scalaCheck, mUnit).map(_ % Test)
 
 }
