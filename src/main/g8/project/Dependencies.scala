@@ -62,7 +62,3 @@ object Dependencies {
   lazy val TestDependencies = Seq(scalaTest, scalaCheck, mUnit)
 
 }
-
-// PRODUCTIVITY
-// bloop
-// amm
