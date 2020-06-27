@@ -39,7 +39,7 @@ object Dependencies {
   lazy val catsCore = "org.typelevel" %% "cats-core" % "2.1.1"
   lazy val catsEffect = "org.typelevel" %% "cats-effect" % "2.1.3"
 
-  lazy val fs2 = "co.fs2" %%% "fs2-core" % "2.4.0"
+  lazy val fs2 = "co.fs2" %% "fs2-core" % "2.4.0"
 
   lazy val enumeratum = "com.beachape" %% "enumeratum" % "1.6.0"
 
